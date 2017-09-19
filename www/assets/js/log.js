@@ -1,4 +1,4 @@
-// Developed by the CigarProject //
+// Developed by the MigarProject //
 
 var log = {
 
