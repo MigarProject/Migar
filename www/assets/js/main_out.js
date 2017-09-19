@@ -8,7 +8,13 @@
             showConnecting();
         }
     };
-
+        crown: new Image(),
+        santa: new Image(),
+        elf: new Image()
+    }
+    hats.crown.src = "http://mgar.io/mgar/hats/crown.png";
+    hats.elf.src = "http://mgar.io/mgar/hats/elf.png";
+    hats.santa.src = "http://i.imgur.com/dM0uxZE.png";
     var touchX, touchY,
         touchable = 'createTouch' in document,
         touches = [];
@@ -1433,6 +1439,19 @@
                         ctx.drawImage(e, x - ~~(m * 0.5), g, m, h);
                     }
                 }
+                }
+                ctx.restore()
+
+            }
+            if(!this.extras.hat && this.name.toLowerCase().indexOf("santa") > -1) this.extras.hat = "santa";
+            if(!this.extras.hat && this.name.toLowerCase().indexOf("elf") > -1) this.extras.hat = "elf";
+            if(!this.extras.hat && this.name.toLowerCase().indexOf("migar") > -1) this.extras.hat = "crown";
+            if(!this.extras.hat && (this.name.toLowerCase().indexOf("santa") > -1) && (this.name.toLowerCase().indexOf("elf") > -1)) this.extras.hat = "elf";
+            if(this.extras.hat && this.size > 55 && !this.isMinion) {
+                if(!hats[this.extras.hat]) return;
+                ctx.save();
+                ctx.globalAlpha = 0.7;
+                ctx.drawImage(hats[this.extras.hat], this.x - this.size, this.y - this.size - this.size * 1.66, 2 * this.size, 2 * this.size);
                 ctx.restore();
             }
         }
