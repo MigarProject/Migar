@@ -29,6 +29,8 @@ To add another server, you can call any element that has the main_out.js called 
 ```
 
 Replace IP:PORT with the ones that are corresponding with your server, you can also change the NAME to anything you like.
+### Example
+(https://i.imgur.com/tIWbgxX.png)
 
 ### Changing Skins Folder
 The skins folder can be changed to any folder that is located on your web server. If you wish to move the skins folder onto another domain, please do note that the checkdir.php file might stop working and that will break skins from showing up in game. To change the skin folder on the set webserver, you will need to update 2 files. Open /assets/js/main_out.js and edit the following line:
